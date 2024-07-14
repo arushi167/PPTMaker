@@ -1,0 +1,13 @@
+Flask
+gunicorn
+Flask-WTF
+python-pptx
+requests
+json5
+flask-restful==0.3.10
+Flask-OAuthlib
+dnspython
+python-dotenv
+Flask-PyMongo
+g4f
+celery

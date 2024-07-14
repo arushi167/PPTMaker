@@ -1,0 +1,370 @@
+<html data-theme="light" style="--100vh: 715px; color-scheme: light;">
+
+<head>
+    <link rel="stylesheet" href="/static/css/wave_anim.css">
+
+    <meta charset="utf-8">
+    <title>Make It | AI Powered PPT Maker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta
+        content="An innovative platform driven by artificial intelligence that showcases ideas effortlessly. Enjoy visually stunning and captivating content without the hassle of formatting and design."
+        name="description">
+    <meta content="MakeIT" property="og:title">
+    <meta
+        content="An innovative platform driven by artificial intelligence that showcases ideas effortlessly. Enjoy visually stunning and captivating content without the hassle of formatting and design."
+        property="og:description">
+    <meta content="/static/images/logo.png" property="og:image">
+    <meta content="MakeIT" property="twitter:title">
+    <meta
+        content="An innovative platform driven by artificial intelligence that showcases ideas effortlessly. Enjoy visually stunning and captivating content without the hassle of formatting and design."
+        property="twitter:description">
+    <meta content="/static/images/logo.png" property="twitter:image">
+    <meta property="og:type" content="website">
+    <meta content="summary_large_image" name="twitter:card">
+    <link href="/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <link rel="stylesheet" href="/static/css/typing_effect.css">
+</head>
+
+<body class="body-3" , style="scroll-behavior:smooth">
+
+    <div class="background-container">
+        <!-- start: Home -->
+        <div class="dropdown css-sdpt9e" data-topbar="true">
+            <button type="button" class="css-1ayjrty dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <span class="chakra-button__icon css-1wh2kri">
+                    <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="house"
+                        class="svg-inline--fa fa-house fa-xs " role="images" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512">
+                        <path fill="currentColor"
+                            d="M567.5 229.7C577.6 238.3 578.9 253.4 570.3 263.5C561.7 273.6 546.6 274.9 536.5 266.3L512 245.5V432C512 476.2 476.2 512 432 512H144C99.82 512 64 476.2 64 432V245.5L39.53 266.3C29.42 274.9 14.28 273.6 5.7 263.5C-2.875 253.4-1.634 238.3 8.473 229.7L272.5 5.7C281.4-1.9 294.6-1.9 303.5 5.7L567.5 229.7zM144 464H192V312C192 289.9 209.9 272 232 272H344C366.1 272 384 289.9 384 312V464H432C449.7 464 464 449.7 464 432V204.8L288 55.47L112 204.8V432C112 449.7 126.3 464 144 464V464zM240 464H336V320H240V464z">
+                        </path>
+                    </svg>
+                </span>Home
+            </button>
+            <!-- Dropdown menu -->
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item">{{ full_name }} (<strong>{{plan_type}}</strong>)</a></li>
+                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                <li><a class="dropdown-item" href="https://www.witeso.com/contact">Contact us</a></li>
+                {% if plan_type == "Freemium" %}
+                <li><a class="dropdown-item" href="https://www.witeso.com/pricing">Upgrade to Pro</a></li>
+                {% endif %}
+            </ul>
+
+            <div class="css-1s18x99">
+                <button type="button" class="css-14394ji">
+                    <span class="chakra-button__icon css-1wh2kri">
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="coins"
+                            class="svg-inline--fa fa-coins fa-sm " role="images" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M176.6 89.54C177.2 90.75 178.6 92.65 181.3 95.08C181.6 95.41 182 95.75 182.4 96.09C163.8 96.45 145.5 97.84 128 100.2V87.1C128 69.98 137.7 55.58 149.1 45.26C160.6 34.92 175.9 26.72 192.7 20.32C226.4 7.454 271.5 0 320 0C368.5 0 413.6 7.454 447.3 20.32C464.1 26.72 479.4 34.92 490.9 45.26C502.3 55.58 512 69.98 512 87.1V295.1C512 314 502.3 328.4 490.9 338.7C479.4 349.1 464.1 357.3 447.3 363.7C437.7 367.3 427.2 370.6 416 373.3V323.6C421.1 322.1 425.8 320.5 430.2 318.8C443.9 313.6 453.2 308.1 458.7 303.1C461.4 300.7 462.8 298.7 463.4 297.5C464 296.5 464 296 464 295.1V252.4C458.7 255.1 453.1 257.5 447.3 259.7C437.7 263.3 427.2 266.6 416 269.3V219.6C421.1 218.1 425.8 216.5 430.2 214.8C443.9 209.6 453.2 204.1 458.7 199.1C461.4 196.7 462.8 194.7 463.4 193.5C463.9 192.6 463.1 192.1 464 191.1V148.4C458.7 151.1 453.1 153.5 447.3 155.7C433.6 160.9 417.1 165.3 401 168.6C395.9 161 390 154.7 384.3 149.5C374.2 140.4 362.4 132.1 350.2 126.9C381.9 124.6 409.6 118.7 430.2 110.8C443.9 105.6 453.2 100.1 458.7 95.08C461.4 92.65 462.8 90.75 463.4 89.54C463.9 88.61 463.1 88.11 464 87.1C464 87.98 464 87.53 463.4 86.46C462.8 85.25 461.4 83.34 458.7 80.92C453.2 75.94 443.9 70.35 430.2 65.17C403.2 54.87 364.2 47.1 320 47.1C275.8 47.1 236.8 54.87 209.7 65.17C196.1 70.35 186.8 75.94 181.3 80.92C178.6 83.34 177.2 85.25 176.6 86.46C175.1 87.53 175.1 87.98 175.1 87.1C176 88.12 176.1 88.61 176.6 89.54L176.6 89.54zM0 215.1C0 197.1 9.674 183.6 21.14 173.3C32.61 162.9 47.86 154.7 64.66 148.3C98.43 135.5 143.5 128 192 128C240.5 128 285.6 135.5 319.3 148.3C336.1 154.7 351.4 162.9 362.9 173.3C374.3 183.6 384 197.1 384 215.1V424C384 442 374.3 456.4 362.9 466.7C351.4 477.1 336.1 485.3 319.3 491.7C285.6 504.5 240.5 512 192 512C143.5 512 98.43 504.5 64.66 491.7C47.86 485.3 32.61 477.1 21.14 466.7C9.674 456.4 0 442 0 424V215.1zM48.56 217.5C49.2 218.7 50.57 220.7 53.26 223.1C58.79 228.1 68.15 233.6 81.75 238.8C108.8 249.1 147.8 255.1 192 255.1C236.2 255.1 275.2 249.1 302.2 238.8C315.9 233.6 325.2 228.1 330.7 223.1C333.4 220.7 334.8 218.7 335.4 217.5C335.9 216.6 335.1 216.1 336 215.1C336 215.1 336 215.5 335.4 214.5C334.8 213.3 333.4 211.3 330.7 208.9C325.2 203.9 315.9 198.4 302.2 193.2C275.2 182.9 236.2 176 192 176C147.8 176 108.8 182.9 81.75 193.2C68.15 198.4 58.79 203.9 53.26 208.9C50.57 211.3 49.2 213.3 48.56 214.5C47.98 215.5 47.1 215.1 48 215.1C48 216.1 48.05 216.6 48.56 217.5V217.5zM336 276.4C330.7 279.1 325.1 281.5 319.3 283.7C285.6 296.5 240.5 303.1 192 303.1C143.5 303.1 98.43 296.5 64.66 283.7C58.9 281.5 53.31 279.1 48 276.4V320C48 320.1 48.05 320.6 48.56 321.5C49.2 322.7 50.57 324.7 53.26 327.1C58.79 332.1 68.15 337.6 81.75 342.8C108.8 353.1 147.8 360 192 360C236.2 360 275.2 353.1 302.2 342.8C315.9 337.6 325.2 332.1 330.7 327.1C333.4 324.7 334.8 322.7 335.4 321.5C335.9 320.6 335.1 320.1 336 320L336 276.4zM64.66 387.7C58.9 385.5 53.31 383.1 48 380.4V424C47.1 424 47.98 424.5 48.56 425.5C49.2 426.7 50.57 428.7 53.26 431.1C58.79 436.1 68.15 441.6 81.75 446.8C108.8 457.1 147.8 464 192 464C236.2 464 275.2 457.1 302.2 446.8C315.9 441.6 325.2 436.1 330.7 431.1C333.4 428.7 334.8 426.7 335.4 425.5C336 424.5 336 424 336 424V380.4C330.7 383.1 325.1 385.5 319.3 387.7C285.6 400.5 240.5 408 191.1 408C143.5 408 98.43 400.5 64.66 387.7L64.66 387.7z">
+                            </path>
+                        </svg>
+                    </span>
+                    <span class="css-0"><span id="credit_count">{{credit}}</span> credits</span>
+                    <span class="chakra-button__icon css-1hzyiq5">
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="circle-info"
+                            class="svg-inline--fa fa-circle-info fa-xs " role="images" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512" color="var(--chakra-colors-gray-600)">
+                            <path fill="currentColor"
+                                d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 464c-114.7 0-208-93.31-208-208S141.3 48 256 48s208 93.31 208 208S370.7 464 256 464zM296 336h-16V248C280 234.8 269.3 224 256 224H224C210.8 224 200 234.8 200 248S210.8 272 224 272h8v64h-16C202.8 336 192 346.8 192 360S202.8 384 216 384h80c13.25 0 24-10.75 24-24S309.3 336 296 336zM256 192c17.67 0 32-14.33 32-32c0-17.67-14.33-32-32-32S224 142.3 224 160C224 177.7 238.3 192 256 192z">
+                            </path>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <div class="wave_header">
+            <div class="flex">
+                <div class="css-fguf5i">
+                    <div class="css-2rkiaf">
+                        <div data-chat-step-0="true" class="css-1w1vbxm" style="opacity: 1; transform: none;">
+                            <div class=" css-1b83vig">
+                                <div class="css-172ti6o"><span role="images" aria-label="wave">👋</span> Hello {{
+                                    full_name }}, I
+                                    am your AI design collaborator. What creative project are you interested in pursuing
+                                    today?
+                                </div>
+                            </div>
+                        </div>
+                        <div data-chat-step-3="true" class="css-1bvc4cc" style="opacity: 1; transform: none;">
+                            <div class=" css-a9945a">
+                                <div class="css-172ti6o">
+                                    <div class="css-1glzqji">
+                                        <div class="chakra-input__group css-bx0blc" data-group="true">
+                                            <textarea id="topic" name="topic" placeholder="Type a topic e.g. Blockchain"
+                                                class="chakra-textarea css-bxqpz7" style="height: 38px;"></textarea>
+                                            <div class="chakra-input__right-element css-112oyor">
+                                                <button id="submit_btn" type="button" class="css-16uauux"
+                                                    aria-label="Submit">
+                                                    <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                        data-icon="paper-plane-top"
+                                                        class="svg-inline--fa fa-paper-plane-top fa-fw " role="images"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                        <path fill="currentColor"
+                                                            d="M511.1 255.1c0 12.8-7.625 24.38-19.41 29.41L44.6 477.4c-4.062 1.75-8.344 2.594-12.59 2.594c-8.625 0-17.09-3.5-23.28-10.05c-9.219-9.766-11.34-24.25-5.344-36.27l73.66-147.3l242.1-30.37L77.03 225.6l-73.66-147.3C-2.623 66.3-.4982 51.81 8.72 42.05c9.25-9.766 23.56-12.75 35.87-7.453L492.6 226.6C504.4 231.6 511.1 243.2 511.1 255.1z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="css-14x7tbb">
+                                            <div class="css-13d6pca">
+                                                <p class="css-0" id="text_count">0/200</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="topic_message_div" data-chat-step-4="true" class="d-none css-1w1vbxm"
+                            style="opacity: 1; transform: none;">
+                            <div class="css-1b83vig">
+                                <div class="css-172ti6o" id="topic_message">TOPIC? Intriguing! <br>Allow me to
+                                    brainstorm some concepts...</div>
+                            </div>
+                        </div>
+
+                        <div id="success_content_msg" class="d-none css-1w1vbxm" style="opacity: 1; transform: none;">
+                            <div class=" css-1b83vig">
+                                <div class="css-172ti6o">Take a look at this outline I've created. What are
+                                    your thoughts?</div>
+                            </div>
+                        </div>
+
+                        <div id="loading_div" style="opacity: 1; transform: none;" class="d-none css-1w1vbxm">
+                            <div class="chakra-card css-1b83vig">
+                                <div class="chakra-card__body css-172ti6o">
+                                    <svg height="40" width="40" class="loader">
+                                        <circle class="dot" cx="10" cy="20" r="3" style="fill: #9400ff;" />
+                                        <circle class="dot" cx="20" cy="20" r="3" style="fill:#9400ff;" />
+                                        <circle class="dot" cx="30" cy="20" r="3" style="fill:#9400ff;" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- start: Outline -->
+                        <div id="content_box_div" class="d-none css-6p9geo" style="opacity: 1; transform: none;">
+                            <div class=" css-1rv9but">
+                                <div class="css-172ti6o">
+                                    <div class="css-139h2dn">
+                                        <div class="css-84zodg">
+                                            <p class="css-q9k0mw">Slide Content:</p>
+                                            <div class="css-17xejub"></div>
+                                        </div>
+                                        <div class="css-890kk">
+                                            <div class="css-168p9ht overflow-auto">
+                                                <div class="css-ssx2qw" id="content_box">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="css-14x7tbb"></div>
+
+                                        <!-- start: Content Action Button -->
+                                        <div class="d-none css-i6bazn" id="content_action_btn">
+                                            <ul class="css-hjt8qk">
+                                                <button id="try_again_btn" type="button" class="css-17cmbjm"
+                                                    aria-label="Try again">
+                                                    <span class="chakra-button__icon css-1wh2kri">
+                                                        <svg aria-hidden="true" focusable="false" data-prefix="far"
+                                                            data-icon="arrows-rotate"
+                                                            class="svg-inline--fa fa-arrows-rotate " role="images"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                            <path fill="currentColor"
+                                                                d="M454.7 288.1c-12.78-3.75-26.06 3.594-29.75 16.31C403.3 379.9 333.8 432 255.1 432c-66.53 0-126.8-38.28-156.5-96h100.4c13.25 0 24-10.75 24-24S213.2 288 199.9 288h-160c-13.25 0-24 10.75-24 24v160c0 13.25 10.75 24 24 24s24-10.75 24-24v-102.1C103.7 436.4 176.1 480 255.1 480c99 0 187.4-66.31 215.1-161.3C474.8 305.1 467.4 292.7 454.7 288.1zM472 16C458.8 16 448 26.75 448 40v102.1C408.3 75.55 335.8 32 256 32C157 32 68.53 98.31 40.91 193.3C37.19 206 44.5 219.3 57.22 223c12.84 3.781 26.09-3.625 29.75-16.31C108.7 132.1 178.2 80 256 80c66.53 0 126.8 38.28 156.5 96H312C298.8 176 288 186.8 288 200S298.8 224 312 224h160c13.25 0 24-10.75 24-24v-160C496 26.75 485.3 16 472 16z">
+                                                            </path>
+                                                        </svg>
+                                                    </span>Try again
+                                                </button>
+
+                                                <button id="continue_btn" type="button" class="css-ko6bn5"
+                                                    aria-label="Send">
+                                                    <p class="css-1wazh6u">Continue
+                                                        <svg aria-hidden="true" focusable="false" data-prefix="far"
+                                                            data-icon="arrow-right"
+                                                            class="svg-inline--fa fa-arrow-right " role="images"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                            <path fill="currentColor"
+                                                                d="M264.6 70.63l176 168c4.75 4.531 7.438 10.81 7.438 17.38s-2.688 12.84-7.438 17.38l-176 168c-9.594 9.125-24.78 8.781-33.94-.8125c-9.156-9.5-8.812-24.75 .8125-33.94l132.7-126.6H24.01c-13.25 0-24.01-10.76-24.01-24.01s10.76-23.99 24.01-23.99h340.1l-132.7-126.6C221.8 96.23 221.5 80.98 230.6 71.45C239.8 61.85 254.1 61.51 264.6 70.63z">
+                                                            </path>
+                                                        </svg>
+                                                    </p>
+                                                    <span class="chakra-badge css-1aey1d3">
+                                                        <div class="css-134p2gk">
+                                                            <p class="css-0">50</p>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="far"
+                                                                data-icon="coins" class="svg-inline--fa fa-coins fa-sm "
+                                                                role="images" xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 512 512">
+                                                                <path fill="currentColor"
+                                                                    d="M176.6 89.54C177.2 90.75 178.6 92.65 181.3 95.08C181.6 95.41 182 95.75 182.4 96.09C163.8 96.45 145.5 97.84 128 100.2V87.1C128 69.98 137.7 55.58 149.1 45.26C160.6 34.92 175.9 26.72 192.7 20.32C226.4 7.454 271.5 0 320 0C368.5 0 413.6 7.454 447.3 20.32C464.1 26.72 479.4 34.92 490.9 45.26C502.3 55.58 512 69.98 512 87.1V295.1C512 314 502.3 328.4 490.9 338.7C479.4 349.1 464.1 357.3 447.3 363.7C437.7 367.3 427.2 370.6 416 373.3V323.6C421.1 322.1 425.8 320.5 430.2 318.8C443.9 313.6 453.2 308.1 458.7 303.1C461.4 300.7 462.8 298.7 463.4 297.5C464 296.5 464 296 464 295.1V252.4C458.7 255.1 453.1 257.5 447.3 259.7C437.7 263.3 427.2 266.6 416 269.3V219.6C421.1 218.1 425.8 216.5 430.2 214.8C443.9 209.6 453.2 204.1 458.7 199.1C461.4 196.7 462.8 194.7 463.4 193.5C463.9 192.6 463.1 192.1 464 191.1V148.4C458.7 151.1 453.1 153.5 447.3 155.7C433.6 160.9 417.1 165.3 401 168.6C395.9 161 390 154.7 384.3 149.5C374.2 140.4 362.4 132.1 350.2 126.9C381.9 124.6 409.6 118.7 430.2 110.8C443.9 105.6 453.2 100.1 458.7 95.08C461.4 92.65 462.8 90.75 463.4 89.54C463.9 88.61 463.1 88.11 464 87.1C464 87.98 464 87.53 463.4 86.46C462.8 85.25 461.4 83.34 458.7 80.92C453.2 75.94 443.9 70.35 430.2 65.17C403.2 54.87 364.2 47.1 320 47.1C275.8 47.1 236.8 54.87 209.7 65.17C196.1 70.35 186.8 75.94 181.3 80.92C178.6 83.34 177.2 85.25 176.6 86.46C175.1 87.53 175.1 87.98 175.1 87.1C176 88.12 176.1 88.61 176.6 89.54L176.6 89.54zM0 215.1C0 197.1 9.674 183.6 21.14 173.3C32.61 162.9 47.86 154.7 64.66 148.3C98.43 135.5 143.5 128 192 128C240.5 128 285.6 135.5 319.3 148.3C336.1 154.7 351.4 162.9 362.9 173.3C374.3 183.6 384 197.1 384 215.1V424C384 442 374.3 456.4 362.9 466.7C351.4 477.1 336.1 485.3 319.3 491.7C285.6 504.5 240.5 512 192 512C143.5 512 98.43 504.5 64.66 491.7C47.86 485.3 32.61 477.1 21.14 466.7C9.674 456.4 0 442 0 424V215.1zM48.56 217.5C49.2 218.7 50.57 220.7 53.26 223.1C58.79 228.1 68.15 233.6 81.75 238.8C108.8 249.1 147.8 255.1 192 255.1C236.2 255.1 275.2 249.1 302.2 238.8C315.9 233.6 325.2 228.1 330.7 223.1C333.4 220.7 334.8 218.7 335.4 217.5C335.9 216.6 335.1 216.1 336 215.1C336 215.1 336 215.5 335.4 214.5C334.8 213.3 333.4 211.3 330.7 208.9C325.2 203.9 315.9 198.4 302.2 193.2C275.2 182.9 236.2 176 192 176C147.8 176 108.8 182.9 81.75 193.2C68.15 198.4 58.79 203.9 53.26 208.9C50.57 211.3 49.2 213.3 48.56 214.5C47.98 215.5 47.1 215.1 48 215.1C48 216.1 48.05 216.6 48.56 217.5V217.5zM336 276.4C330.7 279.1 325.1 281.5 319.3 283.7C285.6 296.5 240.5 303.1 192 303.1C143.5 303.1 98.43 296.5 64.66 283.7C58.9 281.5 53.31 279.1 48 276.4V320C48 320.1 48.05 320.6 48.56 321.5C49.2 322.7 50.57 324.7 53.26 327.1C58.79 332.1 68.15 337.6 81.75 342.8C108.8 353.1 147.8 360 192 360C236.2 360 275.2 353.1 302.2 342.8C315.9 337.6 325.2 332.1 330.7 327.1C333.4 324.7 334.8 322.7 335.4 321.5C335.9 320.6 335.1 320.1 336 320L336 276.4zM64.66 387.7C58.9 385.5 53.31 383.1 48 380.4V424C47.1 424 47.98 424.5 48.56 425.5C49.2 426.7 50.57 428.7 53.26 431.1C58.79 436.1 68.15 441.6 81.75 446.8C108.8 457.1 147.8 464 192 464C236.2 464 275.2 457.1 302.2 446.8C315.9 441.6 325.2 436.1 330.7 431.1C333.4 428.7 334.8 426.7 335.4 425.5C336 424.5 336 424 336 424V380.4C330.7 383.1 325.1 385.5 319.3 387.7C285.6 400.5 240.5 408 191.1 408C143.5 408 98.43 400.5 64.66 387.7L64.66 387.7z">
+                                                                </path>
+                                                            </svg>
+                                                        </div>
+                                                    </span>
+                                                </button>
+                                            </ul>
+                                        </div>
+                                        <!-- end: Content Action Button -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end: Outline -->
+
+                        <div id="inform_image_div" data-chat-step-4="true" class="d-none css-1w1vbxm"
+                            style="opacity: 1; transform: none;">
+                            <div class="css-1b83vig">
+                                <div class="css-172ti6o" id="topic_message">Great! <br>Let me generate some images for
+                                    you...</div>
+                            </div>
+                        </div>
+
+                        <div id="success_image_div" class="d-none css-1w1vbxm" style="opacity: 1; transform: none;">
+                            <div class=" css-1b83vig">
+                                <div class="css-172ti6o">Take a look at these images I've created. What are
+                                    your thoughts?</div>
+                            </div>
+                        </div>
+
+                        <div id="loading_img_div" style="opacity: 1; transform: none;" class="d-none css-1w1vbxm">
+                            <div class="chakra-card css-1b83vig">
+                                <div class="chakra-card__body css-172ti6o">
+                                    <svg height="40" width="40" class="loader">
+                                        <circle class="dot" cx="10" cy="20" r="3" style="fill: #9400ff;" />
+                                        <circle class="dot" cx="20" cy="20" r="3" style="fill:#9400ff;" />
+                                        <circle class="dot" cx="30" cy="20" r="3" style="fill:#9400ff;" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- start: Generate Images -->
+                        <div id="image_box_div" class="d-none css-6p9geo" style="opacity: 1; transform: none;">
+                            <div class=" css-1rv9but">
+                                <div class="css-172ti6o">
+                                    <div class="css-139h2dn">
+                                        <div class="css-84zodg">
+                                            <p class="css-q9k0mw">Slide Images:</p>
+                                            <div class="css-17xejub"></div>
+                                        </div>
+                                        <div id="image_box" class="row justify-content-center"></div>
+
+                                        <!-- start: Image Action Button -->
+                                        <div class="css-i6bazn">
+                                            <ul class="css-hjt8qk">
+                                                <button id="try_again_image_btn" type="button" class="css-17cmbjm"
+                                                    aria-label="Try again">
+                                                    <span class="chakra-button__icon css-1wh2kri">
+                                                        <svg aria-hidden="true" focusable="false" data-prefix="far"
+                                                            data-icon="arrows-rotate"
+                                                            class="svg-inline--fa fa-arrows-rotate " role="images"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                            <path fill="currentColor"
+                                                                d="M454.7 288.1c-12.78-3.75-26.06 3.594-29.75 16.31C403.3 379.9 333.8 432 255.1 432c-66.53 0-126.8-38.28-156.5-96h100.4c13.25 0 24-10.75 24-24S213.2 288 199.9 288h-160c-13.25 0-24 10.75-24 24v160c0 13.25 10.75 24 24 24s24-10.75 24-24v-102.1C103.7 436.4 176.1 480 255.1 480c99 0 187.4-66.31 215.1-161.3C474.8 305.1 467.4 292.7 454.7 288.1zM472 16C458.8 16 448 26.75 448 40v102.1C408.3 75.55 335.8 32 256 32C157 32 68.53 98.31 40.91 193.3C37.19 206 44.5 219.3 57.22 223c12.84 3.781 26.09-3.625 29.75-16.31C108.7 132.1 178.2 80 256 80c66.53 0 126.8 38.28 156.5 96H312C298.8 176 288 186.8 288 200S298.8 224 312 224h160c13.25 0 24-10.75 24-24v-160C496 26.75 485.3 16 472 16z">
+                                                            </path>
+                                                        </svg>
+                                                    </span>Try again
+                                                </button>
+
+                                                <button id="continue_image_btn" type="button" class="css-ko6bn5"
+                                                    aria-label="Send">
+                                                    <p class="css-1wazh6u">Continue
+                                                        <svg aria-hidden="true" focusable="false" data-prefix="far"
+                                                            data-icon="arrow-right"
+                                                            class="svg-inline--fa fa-arrow-right " role="images"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                            <path fill="currentColor"
+                                                                d="M264.6 70.63l176 168c4.75 4.531 7.438 10.81 7.438 17.38s-2.688 12.84-7.438 17.38l-176 168c-9.594 9.125-24.78 8.781-33.94-.8125c-9.156-9.5-8.812-24.75 .8125-33.94l132.7-126.6H24.01c-13.25 0-24.01-10.76-24.01-24.01s10.76-23.99 24.01-23.99h340.1l-132.7-126.6C221.8 96.23 221.5 80.98 230.6 71.45C239.8 61.85 254.1 61.51 264.6 70.63z">
+                                                            </path>
+                                                        </svg>
+                                                    </p>
+                                                    <span class="chakra-badge css-1aey1d3">
+                                                        <div class="css-134p2gk">
+                                                            <p class="css-0">50</p>
+                                                            <svg aria-hidden="true" focusable="false" data-prefix="far"
+                                                                data-icon="coins" class="svg-inline--fa fa-coins fa-sm "
+                                                                role="images" xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 512 512">
+                                                                <path fill="currentColor"
+                                                                    d="M176.6 89.54C177.2 90.75 178.6 92.65 181.3 95.08C181.6 95.41 182 95.75 182.4 96.09C163.8 96.45 145.5 97.84 128 100.2V87.1C128 69.98 137.7 55.58 149.1 45.26C160.6 34.92 175.9 26.72 192.7 20.32C226.4 7.454 271.5 0 320 0C368.5 0 413.6 7.454 447.3 20.32C464.1 26.72 479.4 34.92 490.9 45.26C502.3 55.58 512 69.98 512 87.1V295.1C512 314 502.3 328.4 490.9 338.7C479.4 349.1 464.1 357.3 447.3 363.7C437.7 367.3 427.2 370.6 416 373.3V323.6C421.1 322.1 425.8 320.5 430.2 318.8C443.9 313.6 453.2 308.1 458.7 303.1C461.4 300.7 462.8 298.7 463.4 297.5C464 296.5 464 296 464 295.1V252.4C458.7 255.1 453.1 257.5 447.3 259.7C437.7 263.3 427.2 266.6 416 269.3V219.6C421.1 218.1 425.8 216.5 430.2 214.8C443.9 209.6 453.2 204.1 458.7 199.1C461.4 196.7 462.8 194.7 463.4 193.5C463.9 192.6 463.1 192.1 464 191.1V148.4C458.7 151.1 453.1 153.5 447.3 155.7C433.6 160.9 417.1 165.3 401 168.6C395.9 161 390 154.7 384.3 149.5C374.2 140.4 362.4 132.1 350.2 126.9C381.9 124.6 409.6 118.7 430.2 110.8C443.9 105.6 453.2 100.1 458.7 95.08C461.4 92.65 462.8 90.75 463.4 89.54C463.9 88.61 463.1 88.11 464 87.1C464 87.98 464 87.53 463.4 86.46C462.8 85.25 461.4 83.34 458.7 80.92C453.2 75.94 443.9 70.35 430.2 65.17C403.2 54.87 364.2 47.1 320 47.1C275.8 47.1 236.8 54.87 209.7 65.17C196.1 70.35 186.8 75.94 181.3 80.92C178.6 83.34 177.2 85.25 176.6 86.46C175.1 87.53 175.1 87.98 175.1 87.1C176 88.12 176.1 88.61 176.6 89.54L176.6 89.54zM0 215.1C0 197.1 9.674 183.6 21.14 173.3C32.61 162.9 47.86 154.7 64.66 148.3C98.43 135.5 143.5 128 192 128C240.5 128 285.6 135.5 319.3 148.3C336.1 154.7 351.4 162.9 362.9 173.3C374.3 183.6 384 197.1 384 215.1V424C384 442 374.3 456.4 362.9 466.7C351.4 477.1 336.1 485.3 319.3 491.7C285.6 504.5 240.5 512 192 512C143.5 512 98.43 504.5 64.66 491.7C47.86 485.3 32.61 477.1 21.14 466.7C9.674 456.4 0 442 0 424V215.1zM48.56 217.5C49.2 218.7 50.57 220.7 53.26 223.1C58.79 228.1 68.15 233.6 81.75 238.8C108.8 249.1 147.8 255.1 192 255.1C236.2 255.1 275.2 249.1 302.2 238.8C315.9 233.6 325.2 228.1 330.7 223.1C333.4 220.7 334.8 218.7 335.4 217.5C335.9 216.6 335.1 216.1 336 215.1C336 215.1 336 215.5 335.4 214.5C334.8 213.3 333.4 211.3 330.7 208.9C325.2 203.9 315.9 198.4 302.2 193.2C275.2 182.9 236.2 176 192 176C147.8 176 108.8 182.9 81.75 193.2C68.15 198.4 58.79 203.9 53.26 208.9C50.57 211.3 49.2 213.3 48.56 214.5C47.98 215.5 47.1 215.1 48 215.1C48 216.1 48.05 216.6 48.56 217.5V217.5zM336 276.4C330.7 279.1 325.1 281.5 319.3 283.7C285.6 296.5 240.5 303.1 192 303.1C143.5 303.1 98.43 296.5 64.66 283.7C58.9 281.5 53.31 279.1 48 276.4V320C48 320.1 48.05 320.6 48.56 321.5C49.2 322.7 50.57 324.7 53.26 327.1C58.79 332.1 68.15 337.6 81.75 342.8C108.8 353.1 147.8 360 192 360C236.2 360 275.2 353.1 302.2 342.8C315.9 337.6 325.2 332.1 330.7 327.1C333.4 324.7 334.8 322.7 335.4 321.5C335.9 320.6 335.1 320.1 336 320L336 276.4zM64.66 387.7C58.9 385.5 53.31 383.1 48 380.4V424C47.1 424 47.98 424.5 48.56 425.5C49.2 426.7 50.57 428.7 53.26 431.1C58.79 436.1 68.15 441.6 81.75 446.8C108.8 457.1 147.8 464 192 464C236.2 464 275.2 457.1 302.2 446.8C315.9 441.6 325.2 436.1 330.7 431.1C333.4 428.7 334.8 426.7 335.4 425.5C336 424.5 336 424 336 424V380.4C330.7 383.1 325.1 385.5 319.3 387.7C285.6 400.5 240.5 408 191.1 408C143.5 408 98.43 400.5 64.66 387.7L64.66 387.7z">
+                                                                </path>
+                                                            </svg>
+                                                        </div>
+                                                    </span>
+                                                </button>
+                                            </ul>
+                                        </div>
+                                        <!-- end: Image Action Button -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end: Generate Images -->
+
+                        <div id="inform_ppt_div" class="d-none css-1w1vbxm" style="opacity: 1; transform: none;">
+                            <div class=" css-1b83vig">
+                                <div class="css-172ti6o">Generating PPT, Please wait for a minute</div>
+                            </div>
+                        </div>
+
+                        <div id="loading_ppt_div" style="opacity: 1; transform: none;" class="d-none css-1w1vbxm">
+                            <div class="chakra-card css-1b83vig">
+                                <div class="chakra-card__body css-172ti6o">
+                                    <svg height="40" width="40" class="loader">
+                                        <circle class="dot" cx="10" cy="20" r="3" style="fill: #9400ff;" />
+                                        <circle class="dot" cx="20" cy="20" r="3" style="fill:#9400ff;" />
+                                        <circle class="dot" cx="30" cy="20" r="3" style="fill:#9400ff;" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="success_div" class="d-none css-1w1vbxm" style="opacity: 1; transform: none;">
+                            <div class=" css-1b83vig">
+                                <div class="css-172ti6o">Generated Successfully!</div>
+                            </div>
+                        </div>
+
+                        <div id="insufficent_credit_div" data-chat-step-4="true" class="d-none css-1w1vbxm"
+                            style="opacity: 1; transform: none;">
+                            <div class="css-1b83vig">
+                                <div class="css-172ti6o">Insufficent Credit! Please Buy Some Credits from <a
+                                        href="/pricing">Here</a></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave"
+                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <script src="/static/js/home.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+</body>
+
+</html>
