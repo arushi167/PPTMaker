@@ -1,5 +1,5 @@
 # PPTMaker
-Flask Powered Web Application which takes Topic &amp; Slide Count &amp; Automatically Generates a Presentable PPT.
+Flask Powered Web Application which takes Topic &amp; Slide Count &amp; Automatically Generates a Presentable PPT
 
 ## Website
 [makeit.witeso.com](https://makeit.witeso.com)
