@@ -12,7 +12,7 @@ Flask Powered Web Application which takes Topic &amp; Slide Count &amp; Automati
 - CSS
 - Bootstrap
 - Javascript
-- OpenAi API
+- Google Gemini API
 - Unsplash API
 
 ## Installation
@@ -40,6 +40,15 @@ sudo service redis-server status
 ```
 
 ```
+# Environment Variables Setup
+Create a .env file in the root directory with the following variables:
+
+MONGODB_URI=mongodb://localhost:27017/pptmaker
+UNSPLASH_ACCESS_TOKEN=your_unsplash_access_token_here
+GEMINI_API_KEY=your_gemini_api_key_here
+FLASK_SECRET_KEY=your_secret_key_here
+
+# Install Dependencies
 pip install -r requirements.txt
 
 # Run in Terminal - 1

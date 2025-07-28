@@ -2,7 +2,7 @@ import os
 from functools import wraps
 from functools import wraps
 import datetime
-import g4f
+import google.generativeai as genai
 import json5
 from celery import Celery
 from dotenv import load_dotenv
@@ -16,10 +16,19 @@ from ImageGetter import ImageGetter
 load_dotenv()
 
 MONGODB_URI           = os.environ.get('MONGODB_URI') 
-UNSPLASH_ACCESS_TOKEN = os.environ.get('UNSPLASH_ACCESS_TOKEN') 
+UNSPLASH_ACCESS_TOKEN = os.environ.get('UNSPLASH_ACCESS_TOKEN')
+GEMINI_API_KEY        = os.environ.get('GEMINI_API_KEY') 
 
 app = Flask(__name__)
-app.secret_key = 'VeryVeryComify#@666'  
+app.secret_key = 'VeryVeryComify#@666'
+
+# Configure Gemini API
+if GEMINI_API_KEY:
+    genai.configure(api_key=GEMINI_API_KEY)
+    gemini_model = genai.GenerativeModel('gemini-2.0-flash')
+else:
+    print("Warning: GEMINI_API_KEY not found in environment variables")
+    gemini_model = None  
 
 # Configure MongoDB
 app.config['MONGO_URI'] = MONGODB_URI
@@ -121,15 +130,24 @@ def content():
     topic = request.args.get('topic')
     slidecount = request.args.get('slidecount')
     
+    if not gemini_model:
+        return Response("data: Error: Gemini API not configured\n\n", content_type='text/event-stream')
+    
     current_prompt = f"I Want You to Write Content for a {slidecount} slides PPT on Topic: '{topic}', in this format with no placeholder: <div><li>Slide 1</li><li>[HEADING OF SLIDE 1]</li><li>[CONTENT OF SLIDE 1]</li></div><div><li>Slide 2</li><li>[HEADING OF SLIDE 2]</li><li>[CONTENT OF SLIDE 2]</li></div>"
-    # response = g4f.ChatCompletion.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": current_prompt}], stream=True)
-    response = g4f.ChatCompletion.create(model="airoboros-70b", messages=[{"role": "user", "content": current_prompt}], stream=True)
     
     def generate():
-        for message in response:
-            yield f"data: {message}\n\n"
-            print(message, end="")
-        yield f"data: Session Terminated\n\n"
+        try:
+            response = gemini_model.generate_content(current_prompt, stream=True)
+            
+            for chunk in response:
+                if chunk.text:
+                    yield f"data: {chunk.text}\n\n"
+                    print(chunk.text, end="")
+            
+            yield f"data: Session Terminated\n\n"
+        except Exception as e:
+            yield f"data: Error: {str(e)}\n\n"
+            yield f"data: Session Terminated\n\n"
     
     return Response(generate(), content_type='text/event-stream')
 

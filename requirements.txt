@@ -9,5 +9,5 @@ Flask-OAuthlib
 dnspython
 python-dotenv
 Flask-PyMongo
-g4f
+google-generativeai
 celery
